@@ -1,0 +1,28 @@
+# 依赖
+node_modules
+
+# 构建产物
+dist
+build
+.next
+out
+
+# 缓存
+.cache
+.vite
+.turbo
+
+# 测试覆盖率
+coverage
+
+# 日志
+*.log
+
+# 锁文件（通常不需要格式化）
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# 压缩文件
+*.min.js
+*.min.css
