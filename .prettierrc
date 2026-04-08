@@ -7,5 +7,5 @@
   "useTabs": false,
   "bracketSpacing": true,
   "plugins": ["prettier-plugin-tailwindcss"],
-  "tailwindStylesheet": "./src/App.css"
+  "tailwindStylesheet": "src/index.css"
 }

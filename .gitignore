@@ -29,7 +29,7 @@ logs/
 Thumbs.db
 
 # 编辑器
-.vscode/*
+#.vscode/*
 !.vscode/extensions.json
 .idea/
 
