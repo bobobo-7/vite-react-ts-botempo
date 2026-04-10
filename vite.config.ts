@@ -2,7 +2,7 @@ import { fileURLToPath, URL } from "node:url";
 
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
-import { defineConfig } from "vite";
+import { defineConfig } from "vitest/config";
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -13,6 +13,14 @@ export default defineConfig({
   },
   plugins: [react(), tailwindcss()],
   server: {
-    host: "0.0.0.0"
-  }
+    host: "0.0.0.0",
+  },
+  test: {
+    environment: "jsdom",
+    globals: false,
+    setupFiles: "./src/test/setup.ts",
+    coverage: {
+      reporter: ["text", "html"],
+    },
+  },
 });
