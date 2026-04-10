@@ -31,16 +31,6 @@ function App() {
           <h1 className="my-8 text-[56px] leading-none font-(--heading) tracking-[-1.68px] text-(--text-h) max-lg:my-5 max-lg:text-4xl">
             Get started
           </h1>
-          <p className="m-0">
-            Edit{" "}
-            <code className="inline-flex rounded bg-(--code-bg) px-2 py-1 text-[15px] leading-[135%] font-(--mono) text-(--text-h)">
-              src/App.tsx
-            </code>{" "}
-            and save to test{" "}
-            <code className="inline-flex rounded bg-(--code-bg) px-2 py-1 text-[15px] leading-[135%] font-(--mono) text-(--text-h)">
-              HMR
-            </code>
-          </p>
         </div>
         <Counter />
       </section>
