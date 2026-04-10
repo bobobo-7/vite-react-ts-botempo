@@ -5,23 +5,27 @@ import react from "@vitejs/plugin-react";
 import { defineConfig } from "vitest/config";
 
 // https://vite.dev/config/
-export default defineConfig({
-  resolve: {
-    alias: {
-      "@": fileURLToPath(new URL("./src", import.meta.url)),
+export default defineConfig(() => {
+  const base = process.env.VITE_BASE_PATH ?? "/";
+
+  return {
+    resolve: {
+      alias: {
+        "@": fileURLToPath(new URL("./src", import.meta.url)),
+      },
     },
-  },
-  plugins: [react(), tailwindcss()],
-  server: {
-    host: "0.0.0.0",
-  },
-  test: {
-    environment: "jsdom",
-    globals: false,
-    setupFiles: "./src/test/setup.ts",
-    coverage: {
-      reporter: ["text", "html"],
+    plugins: [react(), tailwindcss()],
+    server: {
+      host: "0.0.0.0",
     },
-  },
-  base: "/vite-react-ts-botempo/",
+    test: {
+      environment: "jsdom",
+      globals: false,
+      setupFiles: "./src/test/setup.ts",
+      coverage: {
+        reporter: ["text", "html"],
+      },
+    },
+    base,
+  };
 });

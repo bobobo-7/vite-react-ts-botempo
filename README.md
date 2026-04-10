@@ -11,5 +11,30 @@
 - `Tailwind CSS v4`：通过 `@tailwindcss/vite` 接入
 - `ESLint 9`：包含 TypeScript、React Hooks、React Refresh、import 规则
 - `Prettier 3` + `prettier-plugin-tailwindcss`
-- `husky` + `lint-stage`
+- `Vitest` + Testing Library
+- `husky` + `lint-staged`
 - `@` 路径别名，默认映射到 `src`
+
+## 常用命令
+
+```bash
+pnpm dev
+pnpm lint
+pnpm test:run
+pnpm build
+pnpm check
+```
+
+## Git Hooks
+
+- `pre-commit`：运行 `lint-staged`
+- `pre-push`：运行 `pnpm check`
+
+## GitHub Pages
+
+项目通过环境变量 `VITE_BASE_PATH` 控制打包基础路径。
+
+- 本地开发默认使用 `/`
+- GitHub Actions 部署时会自动注入 `/${{ github.event.repository.name }}/`
+
+如果你从这个模板创建了新仓库，不需要再手改 `vite.config.ts` 里的仓库名。
