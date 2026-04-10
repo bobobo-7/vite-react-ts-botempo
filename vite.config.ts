@@ -23,4 +23,5 @@ export default defineConfig({
       reporter: ["text", "html"],
     },
   },
+  base: "/vite-react-ts-botempo/",
 });
